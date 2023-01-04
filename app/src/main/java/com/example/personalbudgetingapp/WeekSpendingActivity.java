@@ -6,8 +6,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -36,6 +38,7 @@ public class WeekSpendingActivity extends AppCompatActivity {
     private TextView totalWeekAmountTextView;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
+    private Button button;
 
     private WeekSpendingAdapter weekSpendingAdapter;
     private List<Data> myDataList;
@@ -57,6 +60,15 @@ public class WeekSpendingActivity extends AppCompatActivity {
         totalWeekAmountTextView = findViewById(R.id.totalWeekAmountTextView);
         progressBar = findViewById(R.id.progressBar);
         recyclerView = findViewById(R.id.recyclerView);
+
+        button = findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(WeekSpendingActivity.this, WeeklyAnalyticActivity.class));
+            }
+        });
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);

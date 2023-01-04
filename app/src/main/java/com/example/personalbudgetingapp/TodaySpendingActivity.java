@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -54,6 +55,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FloatingActionButton fab;
     private ProgressDialog loader;
+    private Button button;
 
     private FirebaseAuth mAuth;
     private String onlineUserId = "";
@@ -92,6 +94,14 @@ public class TodaySpendingActivity extends AppCompatActivity {
         linearLayoutManager.setReverseLayout(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
+
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TodaySpendingActivity.this, DailyAnalyticActivity.class));
+            }
+        });
 
         myDatalist = new ArrayList<>();
         todayItemsAdapter = new TodayItemsAdapter(TodaySpendingActivity.this, myDatalist);
