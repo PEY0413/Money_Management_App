@@ -21,73 +21,174 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/applogo"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/accountTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/reemkufi"
+            android:textStyle="bold"
+            android:text="My Account"
+            android:textSize="25.89sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Account Information"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:textSize="25sp"
             android:layout_marginTop="10dp"
-            android:gravity="center"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:background="#000"/>
-
-        <TextView
-            android:id="@+id/userEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="18sp"
+            android:gravity="left"
+            android:text="Account Information"
             android:textColor="#000"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_margin="10dp"
-            android:textAllCaps="true"/>
+            android:fontFamily="@font/comfortaa"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/accCardView"
+            android:layout_width="355dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            app:cardBackgroundColor="#FEE8D4"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/accIdButton"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:backgroundTint="#F5AE51"
+                    android:clickable="false"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="ID"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/accIdTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@+id/accIdButton"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Username"
+                    android:textAlignment="textEnd"/>
+
+                <Button
+                    android:id="@+id/accCreatedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/accIdButton"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:backgroundTint="#F5AE51"
+                    android:clickable="false"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Created on"
+                    android:textAllCaps="false"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/accCreatedDateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_toRightOf="@id/accCreatedDate"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="11-11-2022"
+                    android:textAlignment="textEnd" />
+
+                <Button
+                    android:id="@+id/accEmail"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/accCreatedDate"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:backgroundTint="#F5AE51"
+                    android:clickable="false"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Email"
+                    android:textAllCaps="false"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:id="@+id/userEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="138dp"
+                    android:layout_toRightOf="@id/accEmail"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="abc123@gmail.com"
+                    android:textAlignment="textEnd"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/accIDtitle"
+
+            />
+
+        <Button
+            android:id="@+id/changePasswordBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="#FEE8D4"
+            android:fontFamily="@font/comfortaa"
+            android:text="Change Password                          ▶"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            />
 
         <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/buttons"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:foregroundGravity="bottom"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#DB7869"
+            android:fontFamily="@font/reemkufi"
             android:text="LOG OUT"
             android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="25.89sp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/changePasswordBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttons"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:text="CHANGE PASSWORD"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
     </LinearLayout>
-
 </LinearLayout>
