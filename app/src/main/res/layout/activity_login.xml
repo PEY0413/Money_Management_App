@@ -11,45 +11,87 @@
 
     <ImageView
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/applogo"/>
+        android:layout_height="165dp"
+        android:src="@drawable/login_img" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Pine!"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_margin="30dp"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Email"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:layout_margin="5dp"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:background="@drawable/purple_rec"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="#000"/>
+        android:textColor="#000"
+        android:textColorHint="#948B97"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Password"
-        android:textColor="#000"
-        android:layout_margin="5dp"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:background="@drawable/purple_rec"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:textSize="20sp"
-        android:textColorHint="#000"/>
+        android:textColor="#000"
+        android:textColorHint="#948B97"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/confirmPassword"
+        android:layout_width="280dp"
+        android:layout_height="61dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:padding="20dp"
+        android:background="@drawable/purple_rec"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColor="#000"
+        android:textColorHint="#948B97"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:layout_margin="5dp"
-        android:text="Login"/>
+        android:layout_margin="15dp"
+        android:backgroundTint="#A478B8"
+        android:text="Login"
+        android:textAllCaps="false" />
 
-    <TextView
-        android:id="@+id/loginQn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account? Sign Up"
-        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/logintxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do not have an account? Register" />
+
+        <TextView
+            android:id="@+id/loginQn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="HERE"
+            android:textColor="#DC7869"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/forgotPasswordQn"

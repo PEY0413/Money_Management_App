@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText email, password;
+    private EditText email, password, confirmPassword;
     private Button registerBtn;
     private TextView registerQn;
 
@@ -34,6 +34,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        confirmPassword=findViewById(R.id.confirmPassword);
         registerBtn = findViewById(R.id.registerBtn);
         registerQn = findViewById(R.id.registerQn);
 
@@ -53,13 +54,22 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String emailString = email.getText().toString();
                 String passwordString = password.getText().toString();
+                String confirmPasswordString = confirmPassword.getText().toString();
 
                 if (TextUtils.isEmpty(emailString)) {
-                    email.setError("Email is required");
+                    email.setError("Email cannot be empty.");
                 }
                 if (TextUtils.isEmpty(passwordString)) {
-                    password.setError("Password is required");
-                } else {
+                    password.setError("Password cannot be empty.");
+                }
+                else if (TextUtils.isEmpty(confirmPasswordString)) {
+                    confirmPassword.setError("Please confirm your password.");
+                }
+                else if (!(TextUtils.equals(passwordString,confirmPasswordString))) {
+                    confirmPassword.setError("Incorrect password.");
+                }
+
+                else {
 
                     progressDialog.setMessage("registration in progress");
                     progressDialog.setCanceledOnTouchOutside(false);
