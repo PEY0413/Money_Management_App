@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="Delete"
                 android:textAllCaps="false"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textStyle="bold"
                 android:layout_margin="2dp"/>
 
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:text="Update"
                 android:textAllCaps="false"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textStyle="bold"
                 android:layout_margin="2dp"/>
 

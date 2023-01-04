@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText email, password;
+    private EditText email, password, confirmPassword;
     private Button loginBtn;
     private TextView loginQn, forgotPasswordQn;
 
@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.loginBtn);
         loginQn = findViewById(R.id.loginQn);
         forgotPasswordQn = findViewById(R.id.forgotPasswordQn);
+        confirmPassword=findViewById(R.id.confirmPassword);
 
         mAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -78,13 +79,21 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String emailString = email.getText().toString();
                 String passwordString = password.getText().toString();
+                String confirmPasswordString = confirmPassword.getText().toString();
 
                 if (TextUtils.isEmpty(emailString)) {
-                    email.setError("Email is required");
+                    email.setError("Email cannot be empty.");
                 }
                 if (TextUtils.isEmpty(passwordString)) {
-                    password.setError("Password is required");
+                    password.setError("Password cannot be empty.");
                 }
+                else if (TextUtils.isEmpty(confirmPasswordString)) {
+                    confirmPassword.setError("Please confirm your password.");
+                }
+                else if (!(TextUtils.equals(passwordString,confirmPasswordString))) {
+                    confirmPassword.setError("Incorrect password.");
+                }
+
                 else {
 
                     progressDialog.setMessage("login in progress");
