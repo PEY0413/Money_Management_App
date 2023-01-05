@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(Color.BLACK);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Personal Budgeting App");
 
