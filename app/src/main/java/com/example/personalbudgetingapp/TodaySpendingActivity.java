@@ -73,6 +73,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Daily Spending");
+        toolbar.setTitleTextColor(Color.BLACK);
 
         totalAmountSpendOn = findViewById(R.id.totalAmountSpendOn);
         progressBar = findViewById(R.id.progressBar);
