@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000"
+        android:background="#F5AE52"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             app:fabSize="normal"
-            android:backgroundTint="#000"
+            android:backgroundTint="#F5AE52"
             android:src="@drawable/ic_add"
             android:layout_margin="16dp"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
