@@ -65,7 +65,7 @@
 
                 <Button
                     android:id="@+id/accIdButton"
-                    android:layout_width="125dp"
+                    android:layout_width="105dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="10dp"
@@ -121,7 +121,7 @@
 
                 <Button
                     android:id="@+id/accEmail"
-                    android:layout_width="125dp"
+                    android:layout_width="105dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/accCreatedDate"
                     android:layout_marginStart="18dp"
@@ -162,7 +162,7 @@
             android:elevation="8dp"
             android:fontFamily="@font/comfortaa"
             android:gravity="center_vertical"
-            android:text="Change Password                          ▶"
+            android:text="Change Password                                                ▶"
             android:textAllCaps="false"
             android:textColor="#000" />
 
@@ -171,7 +171,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginRight="0dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="200dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#DB7869"
             android:fontFamily="@font/reemkufi"
