@@ -20,9 +20,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_height="650dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="25dp"
         android:orientation="vertical">
 
@@ -31,31 +31,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/reemkufi"
-            android:textStyle="bold"
             android:text="My Account"
-            android:textSize="25.89sp" />
+            android:textColor="#000"
+            android:textSize="25.89sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/comfortaa"
             android:gravity="left"
             android:text="Account Information"
             android:textColor="#000"
-            android:fontFamily="@font/comfortaa"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/accCardView"
-            android:layout_width="355dp"
+            android:layout_width="match_parent"
             android:layout_height="180dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="8dp"
             android:layout_marginBottom="10dp"
-            android:padding="10dp"
             android:background="#FFFFFF"
             app:cardBackgroundColor="#FEE8D4"
             app:cardCornerRadius="10dp"
@@ -83,14 +81,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginRight="12dp"
                     android:layout_toRightOf="@+id/accIdButton"
                     android:fontFamily="@font/comfortaa"
                     android:text="Username"
-                    android:textAlignment="textEnd"/>
+                    android:textAlignment="textEnd" />
 
                 <Button
                     android:id="@+id/accCreatedDate"
@@ -114,8 +112,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="40dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="80dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toRightOf="@id/accCreatedDate"
                     android:fontFamily="@font/comfortaa"
                     android:text="11-11-2022"
@@ -135,56 +133,49 @@
                     android:fontFamily="@font/comfortaa"
                     android:text="Email"
                     android:textAllCaps="false"
-                    android:textColor="#000"/>
+                    android:textColor="#000" />
 
                 <TextView
                     android:id="@+id/userEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="0dp"
                     android:layout_marginTop="138dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_toRightOf="@id/accEmail"
                     android:fontFamily="@font/comfortaa"
                     android:text="abc123@gmail.com"
-                    android:textAlignment="textEnd"/>
+                    android:textAlignment="textEnd" />
 
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/accIDtitle"
-
-            />
 
         <Button
             android:id="@+id/changePasswordBtn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:backgroundTint="#FEE8D4"
+            android:clickable="true"
+            android:elevation="8dp"
             android:fontFamily="@font/comfortaa"
+            android:gravity="center_vertical"
             android:text="Change Password                          ▶"
             android:textAllCaps="false"
-            android:textColor="#000"
-            android:gravity="center_vertical"
-            android:clickable="true"
-            />
+            android:textColor="#000" />
 
         <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foregroundGravity="bottom"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="250dp"
+            android:layout_height="70dp"
             android:layout_marginRight="0dp"
+            android:layout_marginTop="250dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#DB7869"
             android:fontFamily="@font/reemkufi"
+            android:gravity="center"
             android:text="LOG OUT"
             android:textColor="#fff"
             android:textSize="25.89sp"
