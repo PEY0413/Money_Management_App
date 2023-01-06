@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -78,8 +80,11 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
             @Override
             public void onClick(View view) {
 
-                showDatePickerDialog();
-
+                final Spinner searchSpinner = findViewById(R.id.searchCategorySpinner);
+                String searchCategory = searchSpinner.getSelectedItem().toString();
+                if (!searchCategory.equals("Search Category")) {
+                    showDatePickerDialog();
+                } return;
             }
         });
     }
@@ -112,8 +117,29 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
         String date = doubleDigitFormat + "-" + year;
         Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
-        Query query = reference.orderByChild("date").equalTo(date);
+        final Spinner searchSpinner = findViewById(R.id.searchCategorySpinner);
+        String searchCategory = searchSpinner.getSelectedItem().toString();
+        TextView checkSearchCategory = (TextView) searchSpinner.getSelectedView();
+
+        DatabaseReference expenseRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
+        DatabaseReference budgetRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("budget").child(onlineUserId);
+
+        boolean flagCategory;
+
+        Query query;
+        if (searchCategory.equals("Budget")) {
+            query = budgetRef.orderByChild("date").equalTo(date);
+            flagCategory = false;
+        } else if (searchCategory.equals("Expense")){
+            query = expenseRef.orderByChild("date").equalTo(date);
+            flagCategory = true;
+        } else {
+            checkSearchCategory.setTextColor(Color.RED);
+            checkSearchCategory.setError("Please select a category");
+            Toast.makeText(this, "Please select a category", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -133,7 +159,11 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
                     totalAmount += pTotal;
                     if (totalAmount > 0) {
                         historyTotalAmountSpent.setVisibility(View.VISIBLE);
-                        historyTotalAmountSpent.setText("This day you spent $: " + totalAmount);
+                        if (flagCategory == true) {
+                            historyTotalAmountSpent.setText("This day you spent $: " + totalAmount);
+                        } else {
+                            historyTotalAmountSpent.setText("This day you set $: " + totalAmount + " as total budget" );
+                        }
                     }
                 }
             }

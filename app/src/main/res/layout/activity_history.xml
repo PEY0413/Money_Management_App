@@ -16,6 +16,16 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:elevation="4dp">
 
+        <Spinner
+            android:id="@+id/searchCategorySpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="16dp"
+            android:theme="@style/SpinnerTheme"
+            android:popupBackground="@color/white"
+            android:entries="@array/historyCategory"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
@@ -33,6 +43,7 @@
                 android:background="#808080"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
                 android:layout_marginBottom="20dp"
                 android:layout_margin="20dp"/>
 
@@ -57,7 +68,7 @@
                 android:textStyle="bold"
                 android:textColor="#000"
                 android:layout_gravity="center_horizontal"
-                android:background="#808080"/>
+                android:background="#fff"/>
 
         </LinearLayout>
     </ScrollView>

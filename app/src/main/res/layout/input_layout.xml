@@ -34,7 +34,7 @@
 
             <Spinner
                 android:id="@+id/itemsspinner"
-                android:layout_width="50mm"
+                android:layout_width="315dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="5dp"
@@ -45,7 +45,7 @@
                 android:entries="@array/items"
                 android:gravity="center"
                 android:text="Category"
-                android:theme="@style/SpinnerTheme"></Spinner>
+                android:theme="@style/SpinnerTheme"/>
 
             <EditText
                 android:id="@+id/amount"

@@ -4,6 +4,7 @@
 <!--    splashscreen-->
     <string name="splashScreenTitle">PINE</string>
 
+    <!--item list-->
     <string-array name="items">
         <item>Select item</item>
         <item>Transport</item>
@@ -56,6 +57,12 @@
     <string name="Personal">Personal</string>
     <string name="Other">Other</string>
     <string name="SummarySpendingStatus">Summary Spending Status</string>
+
+    <string-array name="historyCategory">
+        <item>Search Category</item>
+        <item>Budget</item>
+        <item>Expense</item>
+    </string-array>
 
     <string name="defaultStatusvalue">0.0</string>
     <string name="status">status</string>
