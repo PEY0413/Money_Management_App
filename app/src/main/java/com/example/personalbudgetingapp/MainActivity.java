@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView budgetTv, todaySpendingTv, weekSpendingTv,monthSpendingTv, remainingBudgetTv;
 
-    private CardView budgetCardView, todayCardView, homeBtn, weekCardView, monthCardView, analyticsCardView, historyCardView;
+    private CardView incomeCardView, budgetCardView, todayCardView, homeBtn, weekCardView, monthCardView, analyticsCardView, historyCardView;
 
-    private ImageView budgetBtnImageView, weekBtnImageView, todayBtnImageView, monthBtnImageView, analyticsImageView; //budgetBtnImageView;
+    private ImageView incomeBtnImageView, budgetBtnImageView, weekBtnImageView, todayBtnImageView, monthBtnImageView, analyticsImageView; //budgetBtnImageView;
 
     private FirebaseAuth mAuth;
     private DatabaseReference budgetRef, expensesRef, personalRef;
@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Personal Budgeting App");
 
+
         budgetTv = findViewById(R.id.budgetTv);
         todaySpendingTv = findViewById(R.id.todaySpendingTv);
         weekSpendingTv = findViewById(R.id.weekSpendingTv);
@@ -96,7 +97,9 @@ public class MainActivity extends AppCompatActivity {
         analyticsImageView = findViewById(R.id.analyticsImageView);
         budgetBtnImageView = findViewById(R.id.budgetBtnImageView);
 
+        incomeCardView = findViewById(R.id.incomeCardView);
         todayCardView = findViewById(R.id.todayCardView);
+        historyCardView = findViewById(R.id.historyCardView);
 
         analyticsCardView = findViewById(R.id.analyticsCardView);
 
@@ -108,6 +111,14 @@ public class MainActivity extends AppCompatActivity {
                 additem();
             }
         });*/
+
+        incomeCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, IncomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         todayCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,7 +172,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        historyCardView = findViewById(R.id.historyCardView);
         historyCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -187,6 +187,57 @@
                 android:layout_marginTop="10dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/incomeCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="#F6E6FA">
+
+                    <LinearLayout
+                        android:layout_width="355dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/mainbackground"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/incomeBtnImageView"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/ic_history" />
+
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/reemkufi"
+                                android:text="@string/Income"
+                                android:textColor="#000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/comfortaa"
+                                android:text="@string/IncomeCVDes"
+                                android:textColor="#000"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:id="@+id/budgetCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
@@ -220,7 +271,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reemkufi"
-                                android:text="My Budget"
+                                android:text="@string/Budget"
                                 android:textColor="#000"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -229,7 +280,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa"
-                                android:text="Allocate your monthly budget !"
+                                android:text="@string/BudgetCVDes"
                                 android:textColor="#000"
                                 android:textSize="12dp" />
                         </LinearLayout>
@@ -270,7 +321,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reemkufi"
-                                android:text="Today"
+                                android:text="@string/dailyExpense"
                                 android:textColor="#000"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -279,7 +330,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa"
-                                android:text="Save your spending now !"
+                                android:text="@string/dailyExpenseCVDes"
                                 android:textColor="#000"
                                 android:textSize="12dp" />
                         </LinearLayout>
@@ -319,7 +370,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reemkufi"
-                                android:text="This Week"
+                                android:text="@string/weeklyExpense"
                                 android:textColor="#000"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -328,7 +379,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa"
-                                android:text="See your weekly spent !"
+                                android:text="@string/weeklyExpenseCVDes"
                                 android:textColor="#000"
                                 android:textSize="12dp" />
                         </LinearLayout>
@@ -370,7 +421,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reemkufi"
-                                android:text="This Month"
+                                android:text="@string/monthlyExpense"
                                 android:textColor="#000"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -379,7 +430,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa"
-                                android:text="Monitor your monthly cash flow !"
+                                android:text="@string/monthlyExpenseCVDes"
                                 android:textColor="#000"
                                 android:textSize="12dp" />
                         </LinearLayout>
@@ -419,7 +470,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reemkufi"
-                                android:text="Analysis"
+                                android:text="@string/Analysis"
                                 android:textColor="#000"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -428,7 +479,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa"
-                                android:text="View your visualized spending !"
+                                android:text="@string/AnalysisCVDes"
                                 android:textColor="#000"
                                 android:textSize="12dp" />
                         </LinearLayout>
@@ -470,7 +521,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reemkufi"
-                                android:text="History"
+                                android:text="@string/History"
                                 android:textColor="#000"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -479,7 +530,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa"
-                                android:text="Check your spending history !"
+                                android:text="@string/HistoryCVDes"
                                 android:textColor="#000"
                                 android:textSize="12dp" />
                         </LinearLayout>
@@ -488,16 +539,6 @@
 
             </LinearLayout>
         </ScrollView>
-
-        <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            app:fabSize="normal"
-            android:id="@+id/fab"
-            android:backgroundTint="#000"
-            android:src="@drawable/ic_add"
-            android:layout_margin="16dp"/>-->
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

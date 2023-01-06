@@ -1,8 +1,24 @@
 <resources>
     <string name="app_name">Personal Budgeting app</string>
 
-<!--    splashscreen-->
+    <!--    splashscreen-->
     <string name="splashScreenTitle">PINE</string>
+
+    <string name="Income">My Income</string>
+    <string name="Budget">My Budget</string>
+    <string name="dailyExpense">Daily Expense</string>
+    <string name="weeklyExpense">Weekly Expense</string>
+    <string name="monthlyExpense">Monthly Expense</string>
+    <string name="Analysis">Analysis</string>
+    <string name="History">History</string>
+
+    <string name="IncomeCVDes">Record your income now !</string>
+    <string name="BudgetCVDes">Allocate your monthly budget !</string>
+    <string name="dailyExpenseCVDes">Save your spending now !</string>
+    <string name="weeklyExpenseCVDes">See your weekly spent !</string>
+    <string name="monthlyExpenseCVDes">Monitor your monthly cash flow !</string>
+    <string name="AnalysisCVDes">View your spending analysis !</string>
+    <string name="HistoryCVDes">Check your spending history !</string>
 
     <!--item list-->
     <string-array name="items">
@@ -19,7 +35,7 @@
         <item>Other</item>
     </string-array>
 
-<!--recycler view for analytics-->
+    <!--recycler view for analytics-->
     <string-array name="analytic_items">
         <item>Transport</item>
         <item>Food</item>
