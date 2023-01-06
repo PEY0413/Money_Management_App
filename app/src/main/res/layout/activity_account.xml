@@ -26,25 +26,16 @@
         android:layout_marginRight="25dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/accountTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/reemkufi"
-            android:text="My Account"
-            android:textColor="#000"
-            android:textSize="25.89sp"
-            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/comfortaa"
+            android:fontFamily="@font/reemkufi"
             android:gravity="left"
             android:text="Account Information"
             android:textColor="#000"
-            android:textSize="16sp"
+            android:textSize="25.89sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
@@ -171,7 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginRight="0dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="225dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#DB7869"
             android:fontFamily="@font/reemkufi"

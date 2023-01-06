@@ -151,8 +151,8 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
                 String itemNmonth = item + months.getMonths();
 
                 Data data = new Data(item, date, post_key, itemNday, itemNweek, itemNmonth, amount, weeks.getWeeks(), months.getMonths(), note);
-
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("expenses").child(mAuth.getCurrentUser().getUid());
                 reference.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

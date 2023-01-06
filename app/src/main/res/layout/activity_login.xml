@@ -10,28 +10,31 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="165dp"
+        android:layout_width="310dp"
+        android:layout_height="252dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/login_img" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/reemkufi"
         android:text="Welcome to Pine!"
         android:textColor="#000"
         android:textStyle="bold"
-        android:textSize="30sp"
-        android:layout_margin="30dp"
+        android:textSize="25.89dp"
+        android:layout_margin="10dp"
         android:gravity="center"/>
 
     <EditText
         android:id="@+id/email"
         android:layout_width="280dp"
-        android:layout_height="61dp"
-        android:layout_margin="10dp"
-        android:padding="20dp"
+        android:layout_height="55dp"
+        android:layout_margin="8dp"
+        android:paddingLeft="25dp"
         android:background="@drawable/purple_rec"
+        android:fontFamily="@font/comfortaa"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:textColor="#000"
@@ -41,38 +44,38 @@
     <EditText
         android:id="@+id/password"
         android:layout_width="280dp"
-        android:layout_height="61dp"
+        android:layout_height="55dp"
         android:layout_margin="10dp"
-        android:padding="20dp"
+        android:paddingLeft="25dp"
         android:background="@drawable/purple_rec"
+        android:fontFamily="@font/comfortaa"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="#000"
         android:textColorHint="#948B97"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/confirmPassword"
-        android:layout_width="280dp"
-        android:layout_height="61dp"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:padding="20dp"
-        android:background="@drawable/purple_rec"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:textColor="#000"
-        android:textColorHint="#948B97"
-        android:textSize="20sp" />
 
     <Button
         android:id="@+id/loginBtn"
-        android:layout_width="285dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:backgroundTint="#A478B8"
+        android:background="@drawable/loginbtn"
+        android:fontFamily="@font/reemkufi"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:text="Login"
         android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/forgotPasswordQn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa"
+        android:gravity="center"
+        android:text="Forgot Password?"
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -82,23 +85,22 @@
             android:id="@+id/logintxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do not have an account? Register" />
+            android:layout_marginTop="85dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="Do not have an account? Register"
+            android:textSize="12dp"/>
 
         <TextView
             android:id="@+id/loginQn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="85dp"
+            android:fontFamily="@font/comfortaa"
+            android:textStyle="bold"
             android:text="HERE"
-            android:textColor="#DC7869"/>
+            android:textColor="#DC7869"
+            android:textSize="12dp"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/forgotPasswordQn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password?"
-        android:layout_marginTop="8dp"
-        android:gravity="center"/>
 
 </LinearLayout>

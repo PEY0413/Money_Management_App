@@ -24,6 +24,7 @@
             android:id="@+id/totalAmountSpendOn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/reemkufi"
             android:text="Total Amount: $0"
             android:textColor="#000"
             android:textSize="20sp"
@@ -36,9 +37,11 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/reemkufi"
+            android:background="@drawable/loginbtn"
             android:text="View Analysis" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout

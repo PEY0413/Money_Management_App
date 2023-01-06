@@ -25,12 +25,13 @@
             android:id="@+id/totalSavingsAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:fontFamily="@font/reemkufi"
             android:text="Total Monthly Savings Amount: $0"
             android:textColor="#000"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_margin="5dp"/>
+            android:textStyle="bold" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"

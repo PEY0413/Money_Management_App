@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="160dp"
             android:layout_marginTop="480dp"
+            android:fontFamily="@font/reemkufi"
             android:text="PINE"
             android:textColor="@color/black"
             android:textSize="42sp"
@@ -44,6 +45,7 @@
             android:layout_marginLeft="160dp"
             android:layout_marginTop="535dp"
             android:textColor="@color/black"
+            android:fontFamily="@font/comfortaa"
             android:text=" @Argonauts" />
 
         <ImageView

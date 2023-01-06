@@ -25,7 +25,7 @@ import java.nio.file.Files;
 public class ForgotPassword extends AppCompatActivity {
 
     private EditText email;
-    private ImageButton resetPasswordBtn;
+    private Button changePasswordBtn;
     private ProgressBar progressBar;
 
     FirebaseAuth mAuth;
@@ -39,12 +39,12 @@ public class ForgotPassword extends AppCompatActivity {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         email = findViewById(R.id.email);
-        resetPasswordBtn = findViewById(R.id.resetPasswordBtn);
+        changePasswordBtn = findViewById(R.id.changePasswordBtn);
         progressBar = findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
 
-        resetPasswordBtn.setOnClickListener(new View.OnClickListener() {
+        changePasswordBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetPassword();

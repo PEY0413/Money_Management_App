@@ -84,6 +84,16 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
         });
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
@@ -98,7 +108,8 @@ public class HistoryActivity extends AppCompatActivity implements DatePickerDial
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
         int months = month+1;
-        String date = dayOfMonth + "-" + "0" + months + "-" + year;
+        String doubleDigitFormat = String.format("%02d", dayOfMonth) + "-" + String.format("%02d", months);
+        String date = doubleDigitFormat + "-" + year;
         Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
 
         DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
