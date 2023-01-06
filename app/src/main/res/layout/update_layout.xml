@@ -18,9 +18,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="38dp"
+            android:padding="20dp"
             android:background="@color/orange"
             android:gravity=""
-            android:text="    Update This Item?"
+            android:text="Update This Item?"
             android:textColor="#000"
             android:textSize="20sp" />
 
@@ -33,7 +34,8 @@
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:gravity=""
-            android:text=" Item Name"
+            android:padding="10dp"
+            android:text="Item Name"
             android:textColor="#000"
             android:textSize="20sp" />
 
@@ -41,7 +43,8 @@
             android:id="@+id/amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint=" Enter Amount"
+            android:padding="10dp"
+            android:hint="Enter Amount"
             android:inputType="number"
             android:textColor="@color/orange"
             android:textColorHint="#000" />
@@ -50,7 +53,8 @@
             android:id="@+id/note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint=" Remarks"
+            android:padding="10dp"
+            android:hint="Remarks"
             android:inputType="textCapSentences"
             android:textColor="@color/orange"
             android:textColorHint="#000" />
