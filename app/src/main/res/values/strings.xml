@@ -49,6 +49,24 @@
         <item>Other</item>
     </string-array>
 
+    <string name="defaultAmount">RM0.00</string>
+    <string name="enterAmount">Enter Amount...</string>
+    <string name="note">Note</string>
+    <string name="defaultNote">Note...</string>
+    <string name="noteInput">Enter Note...</string>
+    <string name="date">Date</string>
+    <string name="defaultDate">01-01-2023</string>
+
+    <!--income page-->
+    <string name="incomeTitle">My Income</string>
+    <string name="incomeAmount">Total Income Amount : RM0.00</string>
+    <string name="incomeLayoutAmount">Income Amount</string>
+    <string name="inputIncomeTitle">Add Income</string>
+
+    <!--income page-->
+    <string name="budgetTitle">My Budget</string>
+    <string name="budgetAmount">Total Budget Amount : RM0.00</string>
+
     <string-array name="databaseRef">
         <item>Trans</item>
         <item>Food</item>

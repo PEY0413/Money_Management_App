@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="10dp"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/amountTitle"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/budgetframe"
+            android:backgroundTint="#F5AE51"
+            android:clickable="false"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/incomeLayoutAmount"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toRightOf="@id/amountTitle"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/defaultAmount"
+            android:textAlignment="textEnd" />
+
+        <Button
+            android:id="@+id/noteTitle"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/amountTitle"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/budgetframe"
+            android:backgroundTint="#F5AE51"
+            android:clickable="false"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/note"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@+id/amount"
+            android:layout_toRightOf="@id/noteTitle"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/noteInput"
+            android:textAlignment="textEnd" />
+
+        <Button
+            android:id="@+id/dateTitle"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/noteTitle"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/budgetframe"
+            android:backgroundTint="#F5AE51"
+            android:clickable="false"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/date"
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@id/note"
+            android:layout_toRightOf="@id/dateTitle"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/defaultDate"
+            android:textAlignment="textEnd" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
