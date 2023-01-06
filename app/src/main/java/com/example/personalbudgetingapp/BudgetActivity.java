@@ -63,7 +63,7 @@ public class BudgetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
 
-        fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.addBudgetFAB);
 
         mAuth = FirebaseAuth.getInstance();
         budgetRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("budget").child(mAuth.getCurrentUser().getUid());
@@ -307,7 +307,7 @@ public class BudgetActivity extends AppCompatActivity {
             @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieve_layout, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_budgetlist, parent, false);
                 return new MyViewHolder(view);
             }
         };

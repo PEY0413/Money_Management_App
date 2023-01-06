@@ -3,12 +3,16 @@ package com.example.personalbudgetingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -21,15 +25,18 @@ import java.nio.file.Files;
 public class ForgotPassword extends AppCompatActivity {
 
     private EditText email;
-    private Button resetPasswordBtn;
+    private ImageButton resetPasswordBtn;
     private ProgressBar progressBar;
 
     FirebaseAuth mAuth;
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         email = findViewById(R.id.email);
         resetPasswordBtn = findViewById(R.id.resetPasswordBtn);
