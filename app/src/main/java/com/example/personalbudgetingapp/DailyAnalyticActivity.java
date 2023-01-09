@@ -199,7 +199,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsTransportAmount.setText("$" + totalAmount);
+                        analyticsTransportAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("day" + databaseRef).setValue(totalAmount);
                 } else {
@@ -232,8 +232,8 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
                     }
-                    totalBudgetAmountTextView.setText("Total day's spending: $" + totalAmount);
-                    dailySpentAmount.setText("Total Spent: $" + totalAmount);
+                    totalBudgetAmountTextView.setText("Total day's spending: RM" + totalAmount);
+                    dailySpentAmount.setText("Total Spent: RM" + totalAmount);
                 } else {
                     totalBudgetAmountTextView.setText("Good job, you haven't spend today.");
                     pieChartView.setVisibility(View.GONE);
@@ -697,7 +697,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsTransportAmount.setText("$" + totalAmount);
+                        analyticsTransportAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayTrans").setValue(totalAmount);
                 } else {
@@ -735,7 +735,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsFoodAmount.setText("$" + totalAmount);
+                        analyticsFoodAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayFood").setValue(totalAmount);
                 } else {
@@ -772,7 +772,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsHouseAmount.setText("$" + totalAmount);
+                        analyticsHouseAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayHouse").setValue(totalAmount);
                 } else {
@@ -810,7 +810,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsEntertainmentAmount.setText("$" + totalAmount);
+                        analyticsEntertainmentAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayEnt").setValue(totalAmount);
                 } else {
@@ -848,7 +848,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsEducationAmount.setText("$" + totalAmount);
+                        analyticsEducationAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayEdu").setValue(totalAmount);
                 } else {
@@ -886,7 +886,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsCharityAmount.setText("$" + totalAmount);
+                        analyticsCharityAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayCharity").setValue(totalAmount);
                 } else {
@@ -924,7 +924,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsApparelAmount.setText("$" + totalAmount);
+                        analyticsApparelAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayApparel").setValue(totalAmount);
                 } else {
@@ -962,7 +962,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsHealthAmount.setText("$" + totalAmount);
+                        analyticsHealthAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayHealth").setValue(totalAmount);
                 } else {
@@ -1000,7 +1000,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsPersonalAmount.setText("$" + totalAmount);
+                        analyticsPersonalAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayPersonal").setValue(totalAmount);
                 } else {
@@ -1038,7 +1038,7 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsOtherAmount.setText("$" + totalAmount);
+                        analyticsOtherAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("dayOther").setValue(totalAmount);
                 } else {

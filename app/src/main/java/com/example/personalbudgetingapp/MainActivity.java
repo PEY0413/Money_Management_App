@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        budgetBtnImageView.setOnClickListener(new View.OnClickListener() {
+        budgetCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, BudgetActivity.class);
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        todayBtnImageView.setOnClickListener(new View.OnClickListener() {
+        todayCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TodaySpendingActivity.class);
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        weekBtnImageView.setOnClickListener(new View.OnClickListener() {
+        weekCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, WeekSpendingActivity.class);
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        monthBtnImageView.setOnClickListener(new View.OnClickListener() {
+        monthCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, WeekSpendingActivity.class);
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        analyticsImageView.setOnClickListener(new View.OnClickListener() {
+        analyticsCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ChooseAnalyticActivity.class);

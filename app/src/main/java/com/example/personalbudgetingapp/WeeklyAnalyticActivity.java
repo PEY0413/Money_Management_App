@@ -203,7 +203,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsTransportAmount.setText("$" + totalAmount);
+                        analyticsTransportAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("week" + databaseRef).setValue(totalAmount);
                 } else {
@@ -239,8 +239,8 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
                     }
-                    totalBudgetAmountTextView.setText("Total week's spending: $" + totalAmount);
-                    weekSpentAmount.setText("Total Spent: $" + totalAmount);
+                    totalBudgetAmountTextView.setText("Total week's spending: RM" + totalAmount);
+                    weekSpentAmount.setText("Total Spent: RM" + totalAmount);
                 } else {
                     pieChartView.setVisibility(View.GONE);
                 }
@@ -691,7 +691,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsTransportAmount.setText("$" + totalAmount);
+                        analyticsTransportAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekTrans").setValue(totalAmount);
                 } else {
@@ -728,7 +728,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsFoodAmount.setText("$" + totalAmount);
+                        analyticsFoodAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekFood").setValue(totalAmount);
                 } else {
@@ -764,7 +764,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsHouseAmount.setText("$" + totalAmount);
+                        analyticsHouseAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekHouse").setValue(totalAmount);
                 } else {
@@ -801,7 +801,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsEntertainmentAmount.setText("$" + totalAmount);
+                        analyticsEntertainmentAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekEnt").setValue(totalAmount);
                 } else {
@@ -838,7 +838,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsEducationAmount.setText("$" + totalAmount);
+                        analyticsEducationAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekEdu").setValue(totalAmount);
                 } else {
@@ -875,7 +875,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsCharityAmount.setText("$" + totalAmount);
+                        analyticsCharityAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekCharity").setValue(totalAmount);
                 } else {
@@ -912,7 +912,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsApparelAmount.setText("$" + totalAmount);
+                        analyticsApparelAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekApparel").setValue(totalAmount);
                 } else {
@@ -949,7 +949,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsHealthAmount.setText("$" + totalAmount);
+                        analyticsHealthAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekHealth").setValue(totalAmount);
                 } else {
@@ -986,7 +986,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsPersonalAmount.setText("$" + totalAmount);
+                        analyticsPersonalAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekPersonal").setValue(totalAmount);
                 } else {
@@ -1023,7 +1023,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsOtherAmount.setText("$" + totalAmount);
+                        analyticsOtherAmount.setText("RM" + totalAmount);
                     }
                     personalRef.child("weekOther").setValue(totalAmount);
                 } else {

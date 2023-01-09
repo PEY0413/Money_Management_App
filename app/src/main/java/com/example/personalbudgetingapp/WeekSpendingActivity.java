@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -59,6 +60,8 @@ public class WeekSpendingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Weekly Spending");
         toolbar.setTitleTextColor(Color.BLACK);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         totalWeekAmountTextView = findViewById(R.id.totalWeekAmountTextView);
         progressBar = findViewById(R.id.progressBar);
@@ -94,8 +97,16 @@ public class WeekSpendingActivity extends AppCompatActivity {
                 readMonthSpendingItems();
             }
         }
+    }
 
-
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void readMonthSpendingItems() {

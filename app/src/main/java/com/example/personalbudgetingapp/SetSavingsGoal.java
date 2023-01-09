@@ -221,7 +221,7 @@ public class SetSavingsGoal extends AppCompatActivity {
                 TextView CheckSavingsItem = (TextView) savingsItemSpinner.getSelectedView();
                 String SavingsItem = savingsItemSpinner.getSelectedItem().toString();
                 String SavingsNotes = note.getText().toString();
-                DatabaseReference checkingRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("savings goal").child(onlineUserId);
+                DatabaseReference checkingRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("savings goal").child(onlineUserId);
 
 
                 if (TextUtils.isEmpty(SavingsAmount)) {
