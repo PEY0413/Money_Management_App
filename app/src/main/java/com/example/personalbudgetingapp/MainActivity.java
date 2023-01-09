@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.BLACK);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Personal Budgeting App");
+        getSupportActionBar().setTitle("Pine");
 
 
         budgetTv = findViewById(R.id.budgetTv);

@@ -1,12 +1,15 @@
 package com.example.personalbudgetingapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
-import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,7 +20,6 @@ import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
-
 import com.anychart.enums.Align;
 import com.anychart.enums.LegendLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,16 +33,14 @@ import com.google.firebase.database.ValueEventListener;
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.joda.time.MutableDateTime;
-import org.joda.time.Weeks;
 
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.TimerTask;
 
-public class MonthlyAnalyticActivity extends AppCompatActivity {
+public class MonthlyAnalyticFragment extends Fragment {
 
     private Toolbar settingsToolbar;
 
@@ -69,78 +69,88 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
             status_image_other, monthRatioSpending_Image;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_monthly_analytic);
 
-        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_monthly_analytic, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        /*settingsToolbar = view.findViewById(R.id.my_Feed_Toolbar);
         setSupportActionBar(settingsToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Monthly Analytics");
+        getSupportActionBar().setTitle("Monthly Analytics");*/
 
         mAuth = FirebaseAuth.getInstance();
         onlineUserId = mAuth.getCurrentUser().getUid();
         expensesRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
         personalRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("personal").child(onlineUserId);
 
-        totalBudgetAmountTextView = findViewById(R.id.totalBudgetAmountTextView);
+        totalBudgetAmountTextView = view.findViewById(R.id.totalBudgetAmountTextView);
 
-        monthSpentAmount = findViewById(R.id.monthSpentAmount);
-        linearLayoutAnalysis = findViewById(R.id.linearLayoutAnalysis);
-        monthRatioSpending = findViewById(R.id.monthRatioSpending);
-        monthRatioSpending_Image = findViewById(R.id.monthRatioSpending_Image);
+        monthSpentAmount = view.findViewById(R.id.monthSpentAmount);
+        linearLayoutAnalysis = view.findViewById(R.id.linearLayoutAnalysis);
+        monthRatioSpending = view.findViewById(R.id.monthRatioSpending);
+        monthRatioSpending_Image = view.findViewById(R.id.monthRatioSpending_Image);
 
         //general analytic
-        analyticsTransportAmount = findViewById(R.id.analyticsTransportAmount);
-        analyticsFoodAmount = findViewById(R.id.analyticsFoodAmount);
-        analyticsHouseAmount = findViewById(R.id.analyticsHouseAmount);
-        analyticsEntertainmentAmount = findViewById(R.id.analyticsEntertainmentAmount);
-        analyticsEducationAmount = findViewById(R.id.analyticsEducationAmount);
-        analyticsCharityAmount = findViewById(R.id.analyticsCharityAmount);
-        analyticsApparelAmount = findViewById(R.id.analyticsApparelAmount);
-        analyticsHealthAmount = findViewById(R.id.analyticsHealthAmount);
-        analyticsPersonalAmount = findViewById(R.id.analyticsPersonalAmount);
-        analyticsOtherAmount = findViewById(R.id.analyticsOtherAmount);
+        analyticsTransportAmount = view.findViewById(R.id.analyticsTransportAmount);
+        analyticsFoodAmount = view.findViewById(R.id.analyticsFoodAmount);
+        analyticsHouseAmount = view.findViewById(R.id.analyticsHouseAmount);
+        analyticsEntertainmentAmount = view.findViewById(R.id.analyticsEntertainmentAmount);
+        analyticsEducationAmount = view.findViewById(R.id.analyticsEducationAmount);
+        analyticsCharityAmount = view.findViewById(R.id.analyticsCharityAmount);
+        analyticsApparelAmount = view.findViewById(R.id.analyticsApparelAmount);
+        analyticsHealthAmount = view.findViewById(R.id.analyticsHealthAmount);
+        analyticsPersonalAmount = view.findViewById(R.id.analyticsPersonalAmount);
+        analyticsOtherAmount = view.findViewById(R.id.analyticsOtherAmount);
 
         //Relative layouts view
-        linearLayoutTransport = findViewById(R.id.linearLayoutTransport);
-        linearLayoutFood = findViewById(R.id.linearLayoutFood);
-        linearLayoutHouse = findViewById(R.id.linearLayoutHouse);
-        linearLayoutEntertainment = findViewById(R.id.linearLayoutEntertainment);
-        linearLayoutEducation = findViewById(R.id.linearLayoutEducation);
-        linearLayoutCharity = findViewById(R.id.linearLayoutCharity);
-        linearLayoutApparel = findViewById(R.id.linearLayoutApparel);
-        linearLayoutHealth = findViewById(R.id.linearLayoutHealth);
-        linearLayoutPersonal = findViewById(R.id.linearLayoutPersonal);
-        linearLayoutOther = findViewById(R.id.linearLayoutOther);
+        linearLayoutTransport = view.findViewById(R.id.linearLayoutTransport);
+        linearLayoutFood = view.findViewById(R.id.linearLayoutFood);
+        linearLayoutHouse = view.findViewById(R.id.linearLayoutHouse);
+        linearLayoutEntertainment = view.findViewById(R.id.linearLayoutEntertainment);
+        linearLayoutEducation = view.findViewById(R.id.linearLayoutEducation);
+        linearLayoutCharity = view.findViewById(R.id.linearLayoutCharity);
+        linearLayoutApparel = view.findViewById(R.id.linearLayoutApparel);
+        linearLayoutHealth = view.findViewById(R.id.linearLayoutHealth);
+        linearLayoutPersonal = view.findViewById(R.id.linearLayoutPersonal);
+        linearLayoutOther = view.findViewById(R.id.linearLayoutOther);
 
         //TextView
-        progress_ratio_transport = findViewById(R.id.progress_ratio_transport);
-        progress_ratio_food = findViewById(R.id.progress_ratio_food);
-        progress_ratio_house = findViewById(R.id.progress_ratio_house);
-        progress_ratio_entertainment = findViewById(R.id.progress_ratio_entertainment);
-        progress_ratio_education = findViewById(R.id.progress_ratio_education);
-        progress_ratio_charity = findViewById(R.id.progress_ratio_charity);
-        progress_ratio_apparel = findViewById(R.id.progress_ratio_apparel);
-        progress_ratio_health = findViewById(R.id.progress_ratio_health);
-        progress_ratio_personal = findViewById(R.id.progress_ratio_personal);
-        progress_ratio_other = findViewById(R.id.progress_ratio_other);
+        progress_ratio_transport = view.findViewById(R.id.progress_ratio_transport);
+        progress_ratio_food = view.findViewById(R.id.progress_ratio_food);
+        progress_ratio_house = view.findViewById(R.id.progress_ratio_house);
+        progress_ratio_entertainment = view.findViewById(R.id.progress_ratio_entertainment);
+        progress_ratio_education = view.findViewById(R.id.progress_ratio_education);
+        progress_ratio_charity = view.findViewById(R.id.progress_ratio_charity);
+        progress_ratio_apparel = view.findViewById(R.id.progress_ratio_apparel);
+        progress_ratio_health = view.findViewById(R.id.progress_ratio_health);
+        progress_ratio_personal = view.findViewById(R.id.progress_ratio_personal);
+        progress_ratio_other = view.findViewById(R.id.progress_ratio_other);
 
         //ImageView
-        status_image_transport = findViewById(R.id.status_image_transport);
-        status_image_food = findViewById(R.id.status_image_food);
-        status_image_house = findViewById(R.id.status_image_house);
-        status_image_entertainment = findViewById(R.id.status_image_entertainment);
-        status_image_education = findViewById(R.id.status_image_education);
-        status_image_charity = findViewById(R.id.status_image_charity);
-        status_image_apparel = findViewById(R.id.status_image_apparel);
-        status_image_health = findViewById(R.id.status_image_health);
-        status_image_personal = findViewById(R.id.status_image_personal);
-        status_image_other = findViewById(R.id.status_image_other);
+        status_image_transport = view.findViewById(R.id.status_image_transport);
+        status_image_food = view.findViewById(R.id.status_image_food);
+        status_image_house = view.findViewById(R.id.status_image_house);
+        status_image_entertainment = view.findViewById(R.id.status_image_entertainment);
+        status_image_education = view.findViewById(R.id.status_image_education);
+        status_image_charity = view.findViewById(R.id.status_image_charity);
+        status_image_apparel = view.findViewById(R.id.status_image_apparel);
+        status_image_health = view.findViewById(R.id.status_image_health);
+        status_image_personal = view.findViewById(R.id.status_image_personal);
+        status_image_other = view.findViewById(R.id.status_image_other);
 
         //AnyChart
-        pieChartView = findViewById(R.id.pieChartView);
+        pieChartView = view.findViewById(R.id.pieChartView);
 
         getTotalweekTransportExpenses("Transport", "Trans");
         getTotalweekFoodExpenses();
@@ -172,16 +182,6 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
                 setStatusAndImageResource();
             }
         }, 2000);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     private void getTotalmonthItemExpenses(String spendingItem, String databaseRef) {
@@ -355,7 +355,7 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
 
                     pieChartView.setChart(pie);
                 } else {
-                    Toast.makeText(MonthlyAnalyticActivity.this, "Child does not exist!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Child does not exist!", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -661,7 +661,7 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
                         status_image_other.setImageResource(R.drawable.red);
                     }
                 } else {
-                    Toast.makeText(MonthlyAnalyticActivity.this, "setStatusAndImageResource Error.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "setStatusAndImageResource Error.", Toast.LENGTH_SHORT).show();
                 }
             }
 

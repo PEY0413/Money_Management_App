@@ -2,6 +2,7 @@ package com.example.personalbudgetingapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,12 +26,13 @@ import java.nio.file.Files;
 
 public class ForgotPassword extends AppCompatActivity {
 
+    private Toolbar settingsToolbar;
+
     private EditText email;
     private Button changePasswordBtn;
     private ProgressBar progressBar;
 
     FirebaseAuth mAuth;
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,6 +40,12 @@ public class ForgotPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+        setSupportActionBar(settingsToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Forgot Password");
 
         email = findViewById(R.id.email);
         changePasswordBtn = findViewById(R.id.changePasswordBtn);
@@ -50,6 +59,16 @@ public class ForgotPassword extends AppCompatActivity {
                 resetPassword();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void resetPassword() {

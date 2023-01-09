@@ -71,6 +71,8 @@ public class SetSavingsGoal extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Monthly Savings Goal");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setTitleTextColor(Color.BLACK);
 
         totalSavingsAmount = findViewById(R.id.totalSavingsAmount);
