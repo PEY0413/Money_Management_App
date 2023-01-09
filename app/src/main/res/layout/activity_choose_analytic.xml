@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F6E6FA"
+        android:background="#FEE8D4"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
@@ -42,14 +42,14 @@
                 android:id="@+id/todayBtnImageView"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/today" />
+                android:src="@drawable/daily_analytic_icon" />
 
             <TextView
                 android:id="@+id/todayBtnTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/reemkufi"
-                android:text="Today Analytics"
+                android:text="Daily Analytics"
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textStyle="bold" />
@@ -81,7 +81,7 @@
                 android:id="@+id/weekBtnImageView"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/week" />
+                android:src="@drawable/weekly_analytic_icon" />
 
             <TextView
                 android:id="@+id/weekBtnTextView"
@@ -120,7 +120,7 @@
                 android:id="@+id/monthBtnImageView"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/month" />
+                android:src="@drawable/monthly_analytic_icon" />
 
             <TextView
                 android:id="@+id/monthBtnTextView"

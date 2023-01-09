@@ -227,7 +227,7 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
         DateTime now = new DateTime();
         Months months = Months.monthsBetween(epoch, now);
 
-        DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child(onlineUserId);
+        DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
         Query query = reference.orderByChild("month").equalTo(months.getMonths());
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -240,9 +240,9 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
+                        totalBudgetAmountTextView.setText("Total month's spending: RM" + totalAmount);
+                        monthSpentAmount.setText("Total Spent: RM" + totalAmount);
                     }
-                    totalBudgetAmountTextView.setText("Total month's spending: RM" + totalAmount);
-                    monthSpentAmount.setText("Total Spent: RM" + totalAmount);
                 } else {
                     pieChartView.setVisibility(View.VISIBLE);
                 }
@@ -346,8 +346,6 @@ public class MonthlyAnalyticActivity extends AppCompatActivity {
                     data.add(new ValueDataEntry("Other", othTotal));
 
                     pie.data(data);
-                    pie.title("Monthly Analysis");
-                    pie.labels().position("outside");
 
                     pie.legend().title().enabled(true);
                     pie.legend().title().text("Monthly Expenses").padding(0d, 0d, 10d, 0d);

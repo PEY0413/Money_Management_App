@@ -27,7 +27,6 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/remainingBudgetTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -35,9 +34,9 @@
                 android:gravity="center"
                 android:padding="5dp"
                 android:fontFamily="@font/comfortaa"
-                android:text="Savings"
+                android:text="Budget left"
                 android:textColor="#DB7869"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -97,6 +96,7 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/remainingBudgetTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

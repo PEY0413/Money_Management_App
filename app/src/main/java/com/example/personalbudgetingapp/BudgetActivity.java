@@ -39,6 +39,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.joda.time.MutableDateTime;
 import org.joda.time.Weeks;
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -61,6 +62,7 @@ public class BudgetActivity extends AppCompatActivity {
     private String post_key = "";
     private String item = "";
     private int amount = 0;
+    private String note = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -277,8 +279,10 @@ public class BudgetActivity extends AppCompatActivity {
                 holder.setItemAmount("Allocated amount: RM" + model.getAmount());
                 holder.setDate(model.getDate());
                 holder.setItemName(model.getItem());
+                holder.setNotes(model.getNotes());
 
-                holder.notes.setVisibility(View.GONE);
+
+                /*holder.notes.setVisibility(View.GONE);*/
 
                 switch (model.getItem()) {
                     case "Transport":
@@ -319,6 +323,7 @@ public class BudgetActivity extends AppCompatActivity {
                         post_key = getRef(holder.getBindingAdapterPosition()).getKey();
                         item = model.getItem();
                         amount = model.getAmount();
+                        note = model.getNotes();
                         updateData();
                     }
                 });
@@ -366,6 +371,11 @@ public class BudgetActivity extends AppCompatActivity {
             TextView date = mView.findViewById(R.id.date);
             date.setText(itemDate);
         }
+
+        public void setNotes(String itemNote) {
+            TextView note = mView.findViewById(R.id.note);
+            note.setText(itemNote);
+        }
     }
 
     private void updateData() {
@@ -380,10 +390,10 @@ public class BudgetActivity extends AppCompatActivity {
         final EditText mAmount = mView.findViewById(R.id.amount);
         final EditText mNotes = mView.findViewById(R.id.note);
 
-        mNotes.setVisibility(View.GONE);
+        /*mNotes.setVisibility(View.GONE);*/
 
         mItem.setText(item);
-
+        mNotes.setText(note);
         mAmount.setText(String.valueOf(amount));
         mAmount.setSelection(String.valueOf(amount).length());
 

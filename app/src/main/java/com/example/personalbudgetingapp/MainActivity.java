@@ -293,11 +293,11 @@ public class MainActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmountBudget += pTotal;
-                        budgetTv.setText("$" + String.valueOf(totalAmountBudget));
+                        budgetTv.setText("RM" + String.valueOf(totalAmountBudget));
                     }
                 } else {
                     totalAmountBudget = 0;
-                    budgetTv.setText("$" + String.valueOf(0));
+                    budgetTv.setText("RM" + String.valueOf(0));
                 }
             }
 
@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
-                    todaySpendingTv.setText("$" + totalAmount);
+                    todaySpendingTv.setText("RM" + totalAmount);
                 }
                 personalRef.child("today").setValue(totalAmount);
             }
@@ -355,7 +355,7 @@ public class MainActivity extends AppCompatActivity {
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
-                    todaySpendingTv.setText("$" + totalAmount);
+                    weekSpendingTv.setText("RM" + totalAmount);
                 }
                 personalRef.child("week").setValue(totalAmount);
             }
@@ -385,7 +385,7 @@ public class MainActivity extends AppCompatActivity {
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
-                    monthSpendingTv.setText("$" + totalAmount);
+                    monthSpendingTv.setText("RM" + totalAmount);
                 }
                 personalRef.child("month").setValue(totalAmount);
                 totalAmountMonth = totalAmount;
@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     int savings = budget - monthSpending;
-                    remainingBudgetTv.setText("$" + savings);
+                    remainingBudgetTv.setText("RM" + savings);
                 }
             }
 

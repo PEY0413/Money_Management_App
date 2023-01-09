@@ -225,7 +225,7 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
         DateTime now = new DateTime();
         Weeks weeks = Weeks.weeksBetween(epoch, now);
 
-        DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child(onlineUserId);
+        DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
         Query query = reference.orderByChild("week").equalTo(weeks.getWeeks());
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -238,9 +238,10 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
+                        totalBudgetAmountTextView.setText("Total week's spending: RM" + totalAmount);
+                        weekSpentAmount.setText("Total Spent: RM" + totalAmount);
                     }
-                    totalBudgetAmountTextView.setText("Total week's spending: RM" + totalAmount);
-                    weekSpentAmount.setText("Total Spent: RM" + totalAmount);
+
                 } else {
                     pieChartView.setVisibility(View.GONE);
                 }
@@ -344,8 +345,6 @@ public class WeeklyAnalyticActivity extends AppCompatActivity {
                     dataWeek.add(new ValueDataEntry("Other", othTotal));
 
                     weekPie.data(dataWeek);
-                    weekPie.title("Weekly Analytics");
-                    weekPie.labels().position("outside");
 
                     weekPie.legend().title().enabled(true);
                     weekPie.legend().title().text("Weekly Analysis").padding(0d, 0d, 10d, 0d);

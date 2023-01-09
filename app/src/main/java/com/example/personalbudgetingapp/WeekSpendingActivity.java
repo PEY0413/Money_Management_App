@@ -179,7 +179,6 @@ public class WeekSpendingActivity extends AppCompatActivity {
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
-
                     totalWeekAmountTextView.setText("Total Week's Spending: RM" + totalAmount);
                 }
 

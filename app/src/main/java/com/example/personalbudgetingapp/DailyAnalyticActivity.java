@@ -218,7 +218,8 @@ public class DailyAnalyticActivity extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(cal.getTime());
-        DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child(onlineUserId);
+
+        DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
         Query query = reference.orderByChild("date").equalTo(date);
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -231,9 +232,10 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
+                        totalBudgetAmountTextView.setText("Total today's spending: RM" + totalAmount);
+                        dailySpentAmount.setText("Total Spent: RM" + totalAmount);
                     }
-                    totalBudgetAmountTextView.setText("Total day's spending: RM" + totalAmount);
-                    dailySpentAmount.setText("Total Spent: RM" + totalAmount);
+
                 } else {
                     totalBudgetAmountTextView.setText("Good job, you haven't spend today.");
                     pieChartView.setVisibility(View.GONE);
@@ -338,8 +340,6 @@ public class DailyAnalyticActivity extends AppCompatActivity {
                     data.add(new ValueDataEntry("Other", othTotal));
 
                     pie.data(data);
-                    pie.title("Daily Analysis");
-                    pie.labels().position("outside");
 
                     pie.legend().title().enabled(true);
                     pie.legend().title().text("Daily Expenses").padding(0d, 0d, 10d, 0d);
