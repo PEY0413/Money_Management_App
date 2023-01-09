@@ -98,9 +98,11 @@ public class MainActivity extends AppCompatActivity {
         budgetBtnImageView = findViewById(R.id.budgetBtnImageView);
 
         incomeCardView = findViewById(R.id.incomeCardView);
+        budgetCardView = findViewById(R.id.budgetCardView);
         todayCardView = findViewById(R.id.todayCardView);
+        weekCardView = findViewById(R.id.weekCardView);
+        monthCardView = findViewById(R.id.monthCardView);
         historyCardView = findViewById(R.id.historyCardView);
-
         analyticsCardView = findViewById(R.id.analyticsCardView);
 
 /*        fab = findViewById(R.id.fab);
@@ -132,15 +134,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, BudgetActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        todayCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TodaySpendingActivity.class);
                 startActivity(intent);
 
             }

@@ -117,7 +117,7 @@ public class WeekSpendingActivity extends AppCompatActivity {
         Months months = Months.monthsBetween(epoch, now);
 
         getSupportActionBar().setTitle("Monthly Spending");
-        totalWeekAmountTextView.setText("Total Month's Spending: $");
+        totalWeekAmountTextView.setText("Total Month's Spending: RM");
         expensesRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
         Query query = expensesRef.orderByChild("month").equalTo(months.getMonths());
         query.addValueEventListener(new ValueEventListener() {
@@ -139,7 +139,7 @@ public class WeekSpendingActivity extends AppCompatActivity {
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
 
-                    totalWeekAmountTextView.setText("Total Month's Spending: $" + totalAmount);
+                    totalWeekAmountTextView.setText("Total Month's Spending: RM" + totalAmount);
                 }
 
             }
@@ -158,7 +158,7 @@ public class WeekSpendingActivity extends AppCompatActivity {
         DateTime now = new DateTime();
         Weeks weeks = Weeks.weeksBetween(epoch, now);
 
-        totalWeekAmountTextView.setText("Total Week's Spending: $");
+        totalWeekAmountTextView.setText("Total Week's Spending: RM");
         expensesRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("expenses").child(onlineUserId);
         Query query = expensesRef.orderByChild("week").equalTo(weeks.getWeeks());
         query.addValueEventListener(new ValueEventListener() {
@@ -180,7 +180,7 @@ public class WeekSpendingActivity extends AppCompatActivity {
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount += pTotal;
 
-                    totalWeekAmountTextView.setText("Total Week's Spending: $" + totalAmount);
+                    totalWeekAmountTextView.setText("Total Week's Spending: RM" + totalAmount);
                 }
 
             }
