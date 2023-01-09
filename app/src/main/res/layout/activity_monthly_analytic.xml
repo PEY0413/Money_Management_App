@@ -15,23 +15,11 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_Feed_Toolbar"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#E0C2F2"
+            android:layout_height="wrap_content"
+            android:background="#000"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-            <TextView
-                android:id="@+id/toolbarTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/reemkufi"
-                android:text="Monthly Expenses Analysis"
-                android:textColor="#000"
-                android:textSize="25.89sp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal|top"
-                android:layout_margin="5dp"/>
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
