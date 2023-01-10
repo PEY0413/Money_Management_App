@@ -9,9 +9,8 @@
     tools:context=".RegistrationActivity">
 
     <ImageView
-        android:layout_width="260dp"
-        android:layout_height="255dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="160dp"
+        android:layout_height="155dp"
         android:src="@drawable/registration_img" />
 
     <TextView
@@ -88,7 +87,6 @@
             android:id="@+id/registertxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
             android:fontFamily="@font/comfortaa"
             android:text="Already have an account? Login"
             android:textSize="12dp"/>
@@ -97,7 +95,6 @@
             android:id="@+id/registerQn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
             android:layout_marginStart="5dp"
             android:fontFamily="@font/comfortaa"
             android:text="HERE"

@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="310dp"
         android:layout_height="252dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/login_img" />
 
     <TextView
@@ -77,6 +77,8 @@
         android:text="Forgot Password?"
         android:textStyle="bold"/>
 
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -85,7 +87,7 @@
             android:id="@+id/logintxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/comfortaa"
             android:text="Do not have an account? Register"
             android:textSize="12dp"/>
@@ -95,12 +97,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/comfortaa"
             android:textStyle="bold"
             android:text="HERE"
             android:textColor="#DC7869"
             android:textSize="12dp"/>
+
     </LinearLayout>
 
 </LinearLayout>

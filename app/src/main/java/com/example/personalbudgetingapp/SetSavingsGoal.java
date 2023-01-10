@@ -152,7 +152,7 @@ public class SetSavingsGoal extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(cal.getTime());
 
-        totalSavingsAmount.setText("Monthly Savings Goal: $");
+        totalSavingsAmount.setText("Monthly Savings Goal: RM");
         DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("savings goal").child(onlineUserId);
         Query query = reference.orderByChild("date").equalTo(date);
         query.addValueEventListener(new ValueEventListener() {

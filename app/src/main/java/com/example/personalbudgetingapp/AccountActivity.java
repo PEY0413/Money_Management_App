@@ -44,10 +44,10 @@ public class AccountActivity extends AppCompatActivity {
         logoutBtn = findViewById(R.id.logoutBtn);
         changePasswordBtn = findViewById(R.id.changePasswordBtn);
         userEmail = findViewById(R.id.userEmail);
-        darkModeSwitch = findViewById(R.id.darkModeSwitcher);
+        /*darkModeSwitch = findViewById(R.id.darkModeSwitcher);*/
         //Used for saving mode if exit the app and going back again
-        sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
-        darkMode = sharedPreferences.getBoolean("dark", false); //default is light mode
+        /*sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
+        darkMode = sharedPreferences.getBoolean("dark", false); //default is light mode*/
 
         userEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
@@ -77,7 +77,7 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-        if (darkMode) {
+        /*if (darkMode) {
             darkModeSwitch.setChecked(true);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
@@ -94,7 +94,7 @@ public class AccountActivity extends AppCompatActivity {
                     editor.putBoolean("dark", true);
                 } editor.apply();
             }
-        });
+        });*/
     }
 
     @Override

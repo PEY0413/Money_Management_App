@@ -93,6 +93,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
         personalRef = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("personal").child(onlineUserId);
 
         recyclerView = findViewById(R.id.recyclerView);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);

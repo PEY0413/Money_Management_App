@@ -189,7 +189,7 @@ public class BudgetActivity extends AppCompatActivity {
     private void additem() {
         AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
-        View myView = inflater.inflate(R.layout.input_layout, null);
+        View myView = inflater.inflate(R.layout.input_budget_layout, null);
         myDialog.setView(myView);
 
         final AlertDialog dialog = myDialog.create();
@@ -276,7 +276,7 @@ public class BudgetActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, final int position, @NonNull final Data model) {
 
-                holder.setItemAmount("Allocated amount: RM" + model.getAmount());
+                holder.setItemAmount("RM" + model.getAmount());
                 holder.setDate(model.getDate());
                 holder.setItemName(model.getItem());
                 holder.setNotes(model.getNotes());

@@ -184,7 +184,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/incomeCardView"
@@ -206,7 +207,7 @@
                             android:id="@+id/incomeBtnImageView"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginStart="20dp"
                             android:layout_marginTop="0dp"
                             android:src="@drawable/incomebtn" />
 

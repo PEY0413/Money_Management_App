@@ -215,7 +215,7 @@ public class IncomeActivity extends AppCompatActivity {
 
                 holder.setItemAmount("RM" + model.getAmount());
                 holder.setDate(model.getDate());
-                holder.setNote("Note: " + model.getNotes());
+                holder.setNote(model.getNotes());
 
                 holder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override

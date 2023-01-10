@@ -55,10 +55,10 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Data data = myDataList.get(position);
 
-        holder.item.setText("Item: " + data.getItem());
-        holder.amount.setText("Amount: " + data.getAmount());
-        holder.date.setText("On: " + data.getDate());
-        holder.notes.setText("Note: " + data.getNotes());
+        holder.item.setText(data.getItem());
+        holder.amount.setText(data.getAmount());
+        holder.date.setText(data.getDate());
+        holder.notes.setText(data.getNotes());
 
         switch (data.getItem()) {
             case "Transport":
@@ -151,8 +151,8 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
                 String itemNmonth = item + months.getMonths();
 
                 Data data = new Data(item, date, post_key, itemNday, itemNweek, itemNmonth, amount, weeks.getWeeks(), months.getMonths(), note);
-                FirebaseAuth mAuth = FirebaseAuth.getInstance();
-                DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("expenses").child(mAuth.getCurrentUser().getUid());
+
+                DatabaseReference reference = FirebaseDatabase.getInstance("https://budgeting-app-7fa87-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("expenses").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 reference.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
