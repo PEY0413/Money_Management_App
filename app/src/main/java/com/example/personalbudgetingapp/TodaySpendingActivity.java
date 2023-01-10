@@ -199,199 +199,6 @@ public class TodaySpendingActivity extends AppCompatActivity {
                 String Item = itemSpinner.getSelectedItem().toString();
                 String notes = note.getText().toString();
 
-                personalRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        float itemPercent;
-                        float itemBudgetTotal;
-                        float itemSpendingTotal;
-                        switch (Item) {
-                            case "Transport":
-                                if (snapshot.hasChild("dayTrans")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayTrans").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayTransRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayTransRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-
-                            case "Food":
-                                if (snapshot.hasChild("dayFood")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayFood").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayFoodRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayFoodRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "House":
-                                if (snapshot.hasChild("dayHouse")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayHouse").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayHouseRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayHouseRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "Entertainment":
-                                if (snapshot.hasChild("dayEnt")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayEnt").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayEntRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayEntRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "Education":
-                                if (snapshot.hasChild("dayEdu")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayEdu").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayEduRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayEduRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "Charity":
-                                if (snapshot.hasChild("dayCharity")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayCharity").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayCharityRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayCharityRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "Apparel":
-                                if (snapshot.hasChild("dayApparel")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayApparel").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayApparelRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayApparelRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "Health":
-                                if (snapshot.hasChild("dayHealth")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayHealth").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayHealthRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayHealthRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "Personal":
-                                if (snapshot.hasChild("dayPersonal")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayPersonal").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayPersonalRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayPersonalRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            case "Other":
-                                if (snapshot.hasChild("dayOther")) {
-                                    itemSpendingTotal = Integer.parseInt(snapshot.child("dayOther").getValue().toString());
-                                } else {
-                                    itemSpendingTotal = 0;
-                                }
-                                if (snapshot.hasChild("dayOtherRatio")) {
-                                    itemBudgetTotal = Integer.parseInt(snapshot.child("dayOtherRatio").getValue().toString());
-                                } else {
-                                    itemBudgetTotal = 0;
-                                }
-                                itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                                if (itemPercent >=80) {
-                                    Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                        }
-                        /*if (Item.equals("Transport")) {
-                            if (snapshot.hasChild("dayTrans")) {
-                                itemSpendingTotal = Integer.parseInt(snapshot.child("dayTrans").getValue().toString());
-                            } else {
-                                itemSpendingTotal = 0;
-                            }
-                            if (snapshot.hasChild("dayTransRatio")) {
-                                itemBudgetTotal = Integer.parseInt(snapshot.child("dayTransRatio").getValue().toString());
-                            } else {
-                                itemBudgetTotal = 0;
-                            }
-                            itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
-                            if (itemPercent >=80) {
-                                Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + "% of your daily budget!", Toast.LENGTH_SHORT).show();
-                            }
-                        }*/
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
                 if(TextUtils.isEmpty(Amount)) {
                     amount.setError("Amount is required!");
                     return;
@@ -411,6 +218,178 @@ public class TodaySpendingActivity extends AppCompatActivity {
                     loader.setMessage("adding an expense item");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
+
+                    personalRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            float itemPercent;
+                            float itemBudgetTotal;
+                            float itemSpendingTotal;
+                            switch (Item) {
+                                case "Transport":
+                                    if (snapshot.hasChild("dayTransRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayTransRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (Integer.parseInt(Amount)/itemBudgetTotal)*100;
+                                    if (itemPercent >= 80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily " + Item + " budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+
+                                case "Food":
+                                    if (snapshot.hasChild("dayFood")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayFood").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayFoodRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayFoodRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily " + Item + " budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "House":
+                                    if (snapshot.hasChild("dayHouse")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayHouse").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayHouseRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayHouseRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "Entertainment":
+                                    if (snapshot.hasChild("dayEnt")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayEnt").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayEntRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayEntRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "Education":
+                                    if (snapshot.hasChild("dayEdu")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayEdu").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayEduRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayEduRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "Charity":
+                                    if (snapshot.hasChild("dayCharity")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayCharity").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayCharityRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayCharityRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "Apparel":
+                                    if (snapshot.hasChild("dayApparel")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayApparel").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayApparelRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayApparelRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "Health":
+                                    if (snapshot.hasChild("dayHealth")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayHealth").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayHealthRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayHealthRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "Personal":
+                                    if (snapshot.hasChild("dayPersonal")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayPersonal").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayPersonalRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayPersonalRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                case "Other":
+                                    if (snapshot.hasChild("dayOther")) {
+                                        itemSpendingTotal = Integer.parseInt(snapshot.child("dayOther").getValue().toString());
+                                    } else {
+                                        itemSpendingTotal = 0;
+                                    }
+                                    if (snapshot.hasChild("dayOtherRatio")) {
+                                        itemBudgetTotal = Integer.parseInt(snapshot.child("dayOtherRatio").getValue().toString());
+                                    } else {
+                                        itemBudgetTotal = 0;
+                                    }
+                                    itemPercent = (itemSpendingTotal/itemBudgetTotal)*100;
+                                    if (itemPercent >=80) {
+                                        Toast.makeText(TodaySpendingActivity.this, "You have used up " + itemPercent + " of your daily budget!", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
 
                     String id = expensesRef.push().getKey();
                     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -444,7 +423,6 @@ public class TodaySpendingActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Toast.makeText(TodaySpendingActivity.this, "Expense item added successfully", Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
-                                finish();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

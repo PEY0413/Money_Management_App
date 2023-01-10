@@ -36,10 +36,10 @@ public class WeekSpendingAdapter extends RecyclerView.Adapter<WeekSpendingAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Data data = myDataList.get(position);
 
-        holder.item.setText("Item: " + data.getItem());
-        holder.amount.setText("Amount: " + data.getAmount());
-        holder.date.setText("On: " + data.getDate());
-        holder.notes.setText("Note: " + data.getNotes());
+        holder.item.setText("" + data.getItem());
+        holder.amount.setText("" + data.getAmount());
+        holder.date.setText("" + data.getDate());
+        holder.notes.setText("" + data.getNotes());
 
         switch (data.getItem()) {
             case "Transport":
