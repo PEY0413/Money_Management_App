@@ -22,7 +22,6 @@
         android:gravity="center"
         android:text="Welcome to Pine!"
         android:textSize="25.89dp"
-        android:textColor="#000"
         android:textStyle="bold" />
 
     <EditText
