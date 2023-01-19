@@ -473,7 +473,7 @@ public class BudgetActivity extends AppCompatActivity {
                         pTotal = Integer.parseInt(String.valueOf(total));
                     }
 
-                    int dayItemRatio = pTotal/30*3;
+                    int dayItemRatio = pTotal/30;
                     int weekItemRatio = pTotal/4;
                     int monthItemRatio = pTotal;
 
