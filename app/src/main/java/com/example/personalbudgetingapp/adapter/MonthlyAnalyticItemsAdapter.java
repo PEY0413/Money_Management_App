@@ -53,7 +53,7 @@ public class MonthlyAnalyticItemsAdapter extends RecyclerView.Adapter<MonthlyAna
         holder.AnalyticItemsName.setText(monthlyAnalyticModels.get(position).getAnalyticItem());
         holder.itemMonth.setText(monthlyAnalyticModels.get(position).getAnalyticPeriod());
         holder.imageView.setImageResource(monthlyAnalyticModels.get(position).getImage());
-        holder.AnalyticItemAmount.setText("$" + monthlyAnalyticModels.get(position).getAnalyticItemAmount());
+        holder.AnalyticItemAmount.setText("RM" + monthlyAnalyticModels.get(position).getAnalyticItemAmount());
     }
 
     @Override

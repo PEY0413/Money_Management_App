@@ -37,7 +37,7 @@ public class WeekSpendingAdapter extends RecyclerView.Adapter<WeekSpendingAdapte
         final Data data = myDataList.get(position);
 
         holder.item.setText("" + data.getItem());
-        holder.amount.setText("" + data.getAmount());
+        holder.amount.setText("RM" + data.getAmount());
         holder.date.setText("" + data.getDate());
         holder.notes.setText("" + data.getNotes());
 

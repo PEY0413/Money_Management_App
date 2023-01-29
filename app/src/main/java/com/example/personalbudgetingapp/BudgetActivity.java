@@ -130,7 +130,7 @@ public class BudgetActivity extends AppCompatActivity {
 
                         totalamount += data.getAmount();
 
-                        String sttotal = String.valueOf("Monthly Budget: " + totalamount);
+                        String sttotal = String.valueOf("Monthly Budget: RM" + totalamount);
 
                         totalBudgetAmountTextView.setText(sttotal);
 

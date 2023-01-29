@@ -58,7 +58,7 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
         final Data data = myDataList.get(position);
 
         holder.item.setText("" + data.getItem());
-        holder.amount.setText("" + data.getAmount());
+        holder.amount.setText("RM" + data.getAmount());
         holder.date.setText("" + data.getDate());
         holder.notes.setText("" + data.getNotes());
 

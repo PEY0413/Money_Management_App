@@ -198,7 +198,7 @@
 
                     <LinearLayout
                         android:layout_width="355dp"
-                        android:layout_height="90dp"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/mainbackground"
@@ -465,14 +465,14 @@
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="25dp"
-                            android:layout_marginTop="18dp"
+                            android:layout_marginTop="8dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/reemkufi"
-                                android:text="@string/Analysis"
+                                android:text="Analysis and Goals"
                                 android:textColor="#000"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -481,7 +481,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa"
-                                android:text="@string/AnalysisCVDes"
+                                android:text="View your spending habits and set your saving goals !"
                                 android:textColor="#000"
                                 android:textSize="12dp" />
                         </LinearLayout>
@@ -498,7 +498,7 @@
 
                     <LinearLayout
                         android:layout_width="355dp"
-                        android:layout_height="90dp"
+                        android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/mainbackground"

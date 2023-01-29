@@ -15,7 +15,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_Feed_Toolbar"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:background="#E0C2F2"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -25,13 +25,15 @@
                 android:id="@+id/toolbarTitleTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
                 android:fontFamily="@font/reemkufi"
                 android:text="Weekly Expenses Analysis"
                 android:textColor="#000"
-                android:textSize="25.89sp"
+                android:textSize="20dp"
                 android:textStyle="bold"
-                android:gravity="center_horizontal|top"
-                android:layout_margin="5dp"/>
+
+                android:gravity="top"
+                />
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
