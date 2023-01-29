@@ -1,5 +1,5 @@
 # WIA2007 Mobile Application Development Assignment
-## PINE - Money Manangemenet App
+## PINE - Personal Financial Managemenet App
 ## Occ 4 Group 1 - Argonauts
 
 |        Name     | Matric No.  |
