@@ -19,10 +19,12 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Date;
+
 public class AccountActivity extends AppCompatActivity {
 
     private Toolbar settingsToolbar;
-    private TextView userEmail;
+    private TextView userEmail, accCreatedDateTV;
     private Button logoutBtn, changePasswordBtn;
     private Switch darkModeSwitch;
     private boolean darkMode;
@@ -44,11 +46,18 @@ public class AccountActivity extends AppCompatActivity {
         logoutBtn = findViewById(R.id.logoutBtn);
         changePasswordBtn = findViewById(R.id.changePasswordBtn);
         userEmail = findViewById(R.id.userEmail);
+        accCreatedDateTV = findViewById(R.id.accCreatedDateTV);
         darkModeSwitch = findViewById(R.id.darkModeSwitcher);
         //Used for saving mode if exit the app and going back again
         sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
         darkMode = sharedPreferences.getBoolean("dark", false); //default is light mode
 
+        //get Date
+        Date createdDate = new Date(FirebaseAuth.getInstance().getCurrentUser().getMetadata().getCreationTimestamp());
+        String begin = createdDate.toString().substring(4, 11);
+        String end = createdDate.toString().substring(24);
+        /*accCreatedDateTV.setText(createdDate.toString());*/
+        accCreatedDateTV.setText(begin + end);
         userEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
