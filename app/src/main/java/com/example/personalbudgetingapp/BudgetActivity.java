@@ -197,6 +197,7 @@ public class BudgetActivity extends AppCompatActivity {
 
         final Spinner itemSpinner = myView.findViewById(R.id.itemsspinner);
         final EditText amount = myView.findViewById(R.id.amount);
+        final EditText notes = myView.findViewById(R.id.note);
         final Button cancel = myView.findViewById(R.id.cancel);
         final Button save = myView.findViewById(R.id.save);
 
@@ -206,6 +207,7 @@ public class BudgetActivity extends AppCompatActivity {
 
                 String budgetAmount = amount.getText().toString();
                 String budgetItem = itemSpinner.getSelectedItem().toString();
+                String budgetNote = notes.getText().toString();
 
                 if(TextUtils.isEmpty(budgetAmount)) {
                     amount.setError("Amount is required!");
@@ -236,7 +238,7 @@ public class BudgetActivity extends AppCompatActivity {
                     String itemNweek = budgetItem + weeks.getWeeks();
                     String itemNmonth = budgetItem + months.getMonths();
 
-                    Data data = new Data(budgetItem, date, id, itemNday, itemNweek, itemNmonth, Integer.parseInt(budgetAmount), weeks.getWeeks(), months.getMonths(), null);
+                    Data data = new Data(budgetItem, date, id, itemNday, itemNweek, itemNmonth, Integer.parseInt(budgetAmount), weeks.getWeeks(), months.getMonths(), budgetNote);
                     budgetRef.child(id).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
