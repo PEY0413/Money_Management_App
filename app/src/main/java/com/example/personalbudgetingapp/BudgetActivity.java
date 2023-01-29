@@ -406,6 +406,7 @@ public class BudgetActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 amount = Integer.parseInt(mAmount.getText().toString());
+                note = mNotes.getText().toString();
 
                 DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                 Calendar cal = Calendar.getInstance();
@@ -421,7 +422,7 @@ public class BudgetActivity extends AppCompatActivity {
                 String itemNweek = item + weeks.getWeeks();
                 String itemNmonth = item + months.getMonths();
 
-                Data data = new Data(item, date, post_key,itemNday, itemNweek, itemNmonth, amount, weeks.getWeeks(), months.getMonths(), null);
+                Data data = new Data(item, date, post_key,itemNday, itemNweek, itemNmonth, amount, weeks.getWeeks(), months.getMonths(), note);
                 budgetRef.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
